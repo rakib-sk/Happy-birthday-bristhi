@@ -1,0 +1,36 @@
+
+/* ------ existing css unchanged ------ */  
+body {  
+  margin:0; padding:0; height:100vh;  
+  display:flex; justify-content:center; align-items:center;  
+  background:#000; font-family:"Poppins", sans-serif;  
+  overflow:hidden; flex-direction:column;  
+}  
+/* বাকিটা অপরিবর্তিত রাখলাম */  
+.cake-container { position: relative; display:flex; flex-direction:column-reverse; align-items:center; }  
+.layer { height:40px; border-radius:50% / 20%; margin:0; opacity:0; transform:translateY(-200px); animation:dropLayer 1s forwards; }  
+.layer:nth-child(1){width:220px; animation-delay:0s; background:#4b2e2e;}  
+.layer:nth-child(2){width:180px; animation-delay:1s; background:#5c3838;}  
+.layer:nth-child(3){width:140px; animation-delay:2s; background:#7a4b3a;}  
+.layer:nth-child(4){width:100px; animation-delay:3s; background:#9c6b4e;}  
+@keyframes dropLayer{ to{opacity:1; transform:translateY(0);} }  
+.candle{ width:15px; height:50px; background:#fff; border-radius:5px; position:absolute; top:-70px; left:50%; transform:translateX(-50%); opacity:0; animation:candleDrop 1s forwards; animation-delay:4.5s; z-index:2;}  
+@keyframes candleDrop{ to{opacity:1; top:-40px;} }  
+.flame{ width:15px; height:25px; background: radial-gradient(circle, yellow 60%, orange 90%); border-radius:50%; position:absolute; top:-25px; left:50%; transform:translateX(-50%); animation:flicker 0.3s infinite alternate; display:none; z-index:5;}  
+@keyframes flicker{ from{transform:translateX(-50%) scale(1); opacity:1;} to{transform:translateX(-50%) scale(1.2); opacity:0.7;} }  
+.cut-btn{ margin-top:20px; padding:12px 25px; background:crimson; color:#fff; font-size:18px; font-weight:bold; border:none; border-radius:10px; cursor:pointer; display:none; animation:pulse 1s infinite alternate;}  
+@keyframes pulse{ from{transform:scale(1);} to{transform:scale(1.1);} }  
+.hb-container{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; flex-wrap:wrap; width:300px; justify-content:center; opacity:0;}  
+.hb-letter{ font-size:24px; color:#f5deb3; margin:2px; opacity:0; transform:translateY(50px); animation:letterDrop 0.5s forwards;}  
+@keyframes letterDrop{ to{opacity:1; transform:translateY(0);} }  
+.fall{ animation:fallLayer 1s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94); }  
+@keyframes fallLayer{ 0%{transform:translateY(0) rotate(0deg); opacity:1;} 100%{transform:translateY(500px) rotate(45deg); opacity:0;} }  
+.candle-bend{ transition: transform 1s ease-in-out; transform: translateX(-50%) rotate(30deg); }  
+.bazi{ position:absolute; width:40px; height:60px; background:red; border-radius:50%; display:none; z-index:3;}  
+.bazi-mouth{ position:absolute; width:20px; height:10px; background:orange; border-radius:50%; bottom:5px; left:50%; transform:translateX(-50%);}  
+.boom{ position:absolute; width:20px; height:20px; border-radius:50%; background:orange; box-shadow:0 0 10px 5px yellow; pointer-events:none; opacity:1; animation:boomAnim 1s forwards;}  
+@keyframes boomAnim{ 0%{transform:scale(0.2); opacity:1;} 100%{transform:scale(5); opacity:0;} }  
+.confetti{ position:absolute; width:10px; height:10px; border-radius:50%; pointer-events:none; opacity:0.9;}  
+#seeMoreBtn { position:absolute; top:60%; left:50%; transform:translate(-50%, -50%) scale(0.5); width:150px; height:60px; background:#ff4081; border:none; border-radius:10px; color:#fff; font-size:20px; font-weight:bold; cursor:pointer; display:none; box-shadow:0 0 15px rgba(255,64,129,0.6); transition:all 0.3s ease; z-index:10; animation: bounceIn 1s forwards;}  
+#seeMoreBtn:hover { background:#e91e63; transform:translate(-50%, -50%) scale(1.1);}  
+@keyframes bounceIn { 0% { transform:translate(-50%, -50%) scale(0.3); opacity:0; } 50% { transform:translate(-50%, -50%) scale(1.2); opacity:1; } 70% { transform:translate(-50%, -50%) scale(0.9); } 100% { transform:translate(-50%, -50%) scale(1); } }  
