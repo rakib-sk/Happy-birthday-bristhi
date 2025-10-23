@@ -21,7 +21,7 @@ function generateTextParticles() {
   offCanvas.height = canvas.height;
   const offCtx = offCanvas.getContext('2d');
 
-  const textLines = ["Happy birthday", "Sanjidha Apu"];
+  const textLines = ["Happy birthday", "\nSanjidha Apu"];
   offCtx.font = `bold ${fontSize}px Arial`;
   offCtx.textAlign = "center";
   offCtx.textBaseline = "middle";
