@@ -64,7 +64,7 @@ cutBtn.addEventListener("click", ()=>{
         setTimeout(()=>conf.remove(),2000);  
       }  
   
-      const text = "🎉 Happy Birthday Sanjidha apu";  
+      const text = "🎉 Happy Birthday Sanjidha(My dear)";  
       hbContainer.innerHTML="";  
       for(let i=0;i<text.length;i++){  
         const span = document.createElement("span");  
@@ -93,7 +93,6 @@ cutBtn.addEventListener("click", ()=>{
   });  
 });  
   
-// 👉 যখন See more বাটনে চাপ দিবে তখন bg music বন্ধ হবে  
 seeMoreBtn.addEventListener("click", ()=>{  
   bgMusic.pause();  
 });  
